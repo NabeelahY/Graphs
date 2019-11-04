@@ -11,7 +11,12 @@ class Graph:
         """
         Add a vertex to the graph.
         """
-        pass  # TODO
+        if vertex in self.vertices:
+            print('Vertex already present in graph')
+        self.vertices[vertex] = set()
+
+        
+        # TODO
     def add_edge(self, v1, v2):
         """
         Add a directed edge to the graph.
