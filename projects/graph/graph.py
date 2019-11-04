@@ -14,8 +14,6 @@ class Graph:
         """
         Add a vertex to the graph.
         """
-        if vertex in self.vertices:
-            print('Vertex already present in graph')
         self.vertices[vertex] = set()
 
     def add_edge(self, v1, v2):
@@ -41,8 +39,8 @@ class Graph:
             if v not in visited:
                 print(v)
                 visited.add(v)
-            for next_v in self.vertices[v]:
-                q.enqueue(next_v)
+                for next_v in self.vertices[v]:
+                    q.enqueue(next_v)
 
     def dft(self, starting_vertex):
         """
@@ -58,8 +56,8 @@ class Graph:
             if v not in visited:
                 print(v)
                 visited.add(v)
-            for next_v in self.vertices[v]:
-                s.push(next_v)
+                for next_v in self.vertices[v]:
+                    s.push(next_v)
 
     def dft_recursive(self, starting_vertex, visited=set()):
         """
@@ -71,7 +69,7 @@ class Graph:
             print(starting_vertex)
             visited.add(starting_vertex)
             for next_v in self.vertices[starting_vertex]:
-                self.dft_recursive(visited, next_v)
+                self.dft_recursive(next_v, visited)
 
     def bfs(self, starting_vertex, destination_vertex):
         """
